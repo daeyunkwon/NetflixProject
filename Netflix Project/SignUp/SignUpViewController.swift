@@ -20,31 +20,20 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTextField()
-        setupSignUpButton()
-        setupSwitchButton()
+        configureUI()
     }
     
-    func setupTextField() {
+    func configureUI() {
+        designTextFieldUI()
+        designButtonUI()
+    }
+    
+    func designTextFieldUI () {
         configureTextField(with: emailTextField, placeholderText: "이메일 주소 또는 전화번호", keyboardType: .emailAddress, isSecureTextEntry: false)
         configureTextField(with: passwordTextField, placeholderText: "비밀번호", keyboardType: .default, isSecureTextEntry: true)
         configureTextField(with: nickNameTextField, placeholderText: "닉네임", keyboardType: .default, isSecureTextEntry: false)
         configureTextField(with: locationTextField, placeholderText: "위치", keyboardType: .default, isSecureTextEntry: false)
         configureTextField(with: recommendationCodeTextField, placeholderText: "추천 코드 입력", keyboardType: .default, isSecureTextEntry: false)
-    }
-    
-    func setupSignUpButton() {
-        signUpButton.setAttributedTitle(NSAttributedString(string: "회원가입", attributes: [.font: UIFont.boldSystemFont(ofSize: 16)]), for: .normal)
-        signUpButton.titleLabel?.font = .boldSystemFont(ofSize: 14)
-        signUpButton.setTitleColor(.black, for: .normal)
-        signUpButton.backgroundColor = .white
-        signUpButton.layer.cornerRadius = 5
-    }
-    
-    func setupSwitchButton() {
-        switchButton.setOn(false, animated: true)
-        switchButton.onTintColor = .systemRed
-        switchButton.thumbTintColor = .white
     }
     
     func configureTextField(with textField: UITextField, placeholderText: String, keyboardType: UIKeyboardType, isSecureTextEntry: Bool) {
@@ -55,6 +44,18 @@ class SignUpViewController: UIViewController {
         textField.borderStyle = .roundedRect
         textField.backgroundColor = .darkGray
         textField.isSecureTextEntry = isSecureTextEntry
+    }
+    
+    func designButtonUI () {
+        signUpButton.setAttributedTitle(NSAttributedString(string: "회원가입", attributes: [.font: UIFont.boldSystemFont(ofSize: 16)]), for: .normal)
+        signUpButton.titleLabel?.font = .boldSystemFont(ofSize: 14)
+        signUpButton.setTitleColor(.black, for: .normal)
+        signUpButton.backgroundColor = .white
+        signUpButton.layer.cornerRadius = 5
+        
+        switchButton.setOn(false, animated: true)
+        switchButton.onTintColor = .systemRed
+        switchButton.thumbTintColor = .white
     }
     
     @IBAction func signUpButtonTapped(_ sender: UIButton) {
