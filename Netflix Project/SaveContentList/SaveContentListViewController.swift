@@ -43,6 +43,12 @@ class SaveContentListViewController: UIViewController {
     func configureUI() {
         view.backgroundColor = .black
         
+        designLabelUI()
+        designImageViewUI()
+        designButtonUI()
+    }
+    
+    func designLabelUI() {
         titleLabel.text = """
         '나만의 자동저장'기능
         """
@@ -58,10 +64,14 @@ class SaveContentListViewController: UIViewController {
         subTitleLabel.textAlignment = .center
         subTitleLabel.font = .systemFont(ofSize: 14)
         subTitleLabel.numberOfLines = 0
-        
+    }
+    
+    func designImageViewUI() {
         imageView.image = UIImage(named: "dummy")
         imageView.contentMode = .scaleAspectFill
-        
+    }
+    
+    func designButtonUI() {
         settingButton.setTitle("설정하기", for: .normal)
         settingButton.titleLabel?.font = .boldSystemFont(ofSize: 14)
         settingButton.setTitleColor(.white, for: .normal)
