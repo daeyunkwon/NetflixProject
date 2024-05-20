@@ -58,13 +58,21 @@ class NewHotViewController: UIViewController {
         backView.backgroundColor = UIColor(red: 0.20, green: 0.20, blue: 0.20, alpha: 1.00)
         backView.layer.cornerRadius = 5
         
-        searchButton.tintColor = .systemGray
-        
+        designTextFieldUI()
+        designButtonUI()
+        designLabelUI()
+    }
+    
+    func designTextFieldUI() {
         searchTextField.backgroundColor = UIColor(red: 0.20, green: 0.20, blue: 0.20, alpha: 1.00)
         searchTextField.tintColor = .white
         searchTextField.borderStyle = .none
         searchTextField.textColor = .white
         searchTextField.attributedPlaceholder = NSAttributedString(string: "게임, 시리즈, 영화를 검색하세요...", attributes: [.foregroundColor: UIColor.lightGray])
+    }
+    
+    func designButtonUI() {
+        searchButton.tintColor = .systemGray
         
         comingSoonButton.backgroundColor = .white
         comingSoonButton.layer.cornerRadius = 17
@@ -86,7 +94,9 @@ class NewHotViewController: UIViewController {
         topTenButton.setTitle("TOP 10 시리즈", for: .normal)
         topTenButton.titleLabel?.font = .boldSystemFont(ofSize: 13)
         topTenButton.setImage(UIImage.pink, for: .normal)
-        
+    }
+    
+    func designLabelUI() {
         commentLabel.text = "이런! 찾으시는 작품이 없습니다."
         commentLabel.textColor = .white
         commentLabel.font = .boldSystemFont(ofSize: 25)
