@@ -73,9 +73,6 @@ class NewHotViewController: UIViewController {
         comingSoonButton.titleLabel?.font = .boldSystemFont(ofSize: 13)
         comingSoonButton.setImage(UIImage.blue.withRenderingMode(.alwaysOriginal), for: .normal)
         
-        let image = UIImage(systemName: "star")?.withTintColor(.red)
-        image?.withRenderingMode(.alwaysTemplate)
-        
         popularityButton.backgroundColor = .clear
         popularityButton.layer.cornerRadius = 17
         popularityButton.setTitleColor(.white, for: .normal)
